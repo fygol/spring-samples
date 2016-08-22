@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 public class TaskExecutorExample {
 
     @Autowired
-    @Qualifier("defaultTaskExecutor")
+    @Qualifier("simpleAsyncTaskExecutor")
     private TaskExecutor taskExecutor;
 
-    public void runExample() {
+    public void execute() {
         for (int i = 0; i < 25; i++) {
             taskExecutor.execute(new Task(String.valueOf(i)));
         }

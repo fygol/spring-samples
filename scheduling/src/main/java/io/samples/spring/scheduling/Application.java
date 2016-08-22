@@ -1,16 +1,15 @@
 package io.samples.spring.scheduling;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import io.samples.spring.scheduling.config.RootConfig;
+import io.samples.spring.scheduling.config.TaskConfig;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Application {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext(
-            "spring/rootContext.xml",
-            "spring/scheduling.xml"
-        );
-
-        appContext.getBean("task", TaskExecutorExample.class).runExample();
+        ApplicationContext appContext = new AnnotationConfigApplicationContext(RootConfig.class, TaskConfig.class);
+        appContext.getBean("task", TaskExecutorExample.class).execute();
     }
 
 }
