@@ -32,6 +32,7 @@
     <modules>
     	<module>scheduling</module>
         <module>integration</module>
+        <module>properties</module>
     </modules>
 
     <dependencies>
