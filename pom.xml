@@ -33,6 +33,7 @@
     	<module>scheduling</module>
         <module>integration</module>
         <module>properties</module>
+        <module>webmvc</module>
     </modules>
 
     <dependencies>
